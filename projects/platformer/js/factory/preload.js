@@ -14,6 +14,9 @@
         game.load.image('kennedi', './asset/collectable/kennedi-head.png');
         game.load.image('max', './asset/collectable/max-head.png');
         game.load.image('steveh', './asset/collectable/steve-harvey.png');
+        game.load.image('picklechin', './asset/collectable/pickle-chin.png');
         game.load.atlas('halle', './asset/halle/phaser-json-array/halle.png', './asset/halle/phaser-json-array/halle.json');
+        game.load.image('aj1', './asset/collectable/aj1.png');
+        game.load.image('fortnite', './asset/collectable/fortnite.png');
     };
 })(window);

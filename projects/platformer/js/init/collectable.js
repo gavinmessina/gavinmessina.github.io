@@ -11,6 +11,9 @@
         grace: {assetKey: 'grace', points: 40},
         kennedi: {assetKey: 'kennedi', points: 50},
         steveh: {assetKey: 'steveh', points: 69},
+        picklechin: {assetKey: 'picklechin', points: 69},
+        aj1: {assetKey: 'aj1', points: 69},
+        fortnite: {assetKey: 'fortnite', points: 69},
     };
     
     /**
@@ -39,8 +42,10 @@
         
         // example: 
         createCollectable(type.steveh, 200, 170, 5, 0.7);
-        createCollectable(type.max, 855, 250, 5, 0.7);
-        createCollectable(type.grace,5,100,5,0.7);
+        createCollectable(type.max, 855, 350, 5, 0.7);
+        createCollectable(type.picklechin,5,250,0,0.7);
+        createCollectable(type.aj1,0,75,0,0);
+        createCollectable(type.fortnite,820,65,0,0);
         
         // ALL YOUR CODE GOES ABOVE HERE ///////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////

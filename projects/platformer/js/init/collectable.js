@@ -12,7 +12,7 @@
         kennedi: {assetKey: 'kennedi', points: 50},
         steveh: {assetKey: 'steveh', points: 200},
         picklechin: {assetKey: 'picklechin', points: 69},
-        aj1: {assetKey: 'aj1', points: 360},
+        aj1: {assetKey: 'aj1', points: 370},
         fortnite: {assetKey: 'fortnite', points: 999},
         travis: {assetKey: 'travis', points: 100},
     };

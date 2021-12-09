@@ -18,5 +18,6 @@
         game.load.atlas('halle', './asset/halle/phaser-json-array/halle.png', './asset/halle/phaser-json-array/halle.json');
         game.load.image('aj1', './asset/collectable/aj1.png');
         game.load.image('fortnite', './asset/collectable/fortnite.png');
+        game.load.image('travis', './asset/collectable/travis.png');
     };
 })(window);

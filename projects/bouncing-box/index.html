@@ -108,8 +108,16 @@
 			function handleBoxClick() {
 				positionX = 0
 				points += 1;
-				speed += 3;
-				speedY += 3;
+				if (speed >= 0){
+					speed += 3;
+				} else {git add .
+					speed -=3;
+				}
+				if (speedY >= 0){
+					speedY += 3;
+				} else {
+					speedY -=3
+				};
 				changeBoxText(points);
 
 			};

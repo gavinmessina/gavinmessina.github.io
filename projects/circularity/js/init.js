@@ -93,7 +93,7 @@ var init = function (window) {
             } 
             //if the circle has gone off bottom top of the screen, place it on the top
              if ( circle.y < 0 ){
-                circle.y = canvas.width;
+                circle.y = canvas.height;
             }
 
             

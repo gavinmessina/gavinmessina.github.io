@@ -26,7 +26,7 @@ var init = function (window) {
         var circles = []; //empty array that will later hold multiple circles
 
         // TODO 2 : Create a function that draws a circle 
-        
+
         function drawCircle(){
             
             circle = draw.randomCircleInArea(canvas, true, true, '#999', 2); //calls the random circle function, creates a circle, and stores in the information
@@ -36,11 +36,19 @@ var init = function (window) {
         }
 
         // TODO 3 / 8 : Call the drawCircle() function 
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+          }
 
+          async function delayedCircles(){
+              await sleep (0);
+                for(var i = 0; i < 150; i++){
+                    drawCircle();
+                }
+          }
         //manually, repetively draws the circles each tme the function is called
-       for(var i = 0; i < 150; i++){
-        drawCircle();
-    }
+          
+        delayedCircles();
 
         ////////////////////////////////////////////////////////////
         ///////////////// PROGRAM LOGIC ////////////////////////////

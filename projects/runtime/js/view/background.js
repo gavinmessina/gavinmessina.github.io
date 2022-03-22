@@ -38,14 +38,20 @@ var background = function (window) {
             // TODO: 2 - Part 2
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth,groundY,'#9B59B6'); //creates a varible called backgroundFill and stores a rectange as acts as our background
+            var ctx = canvas.getContext("2d"); 
+            var grd = ctx.createLinearGradient(0,canvasHeight,0,0);
+            grd.addColorStop(0.26, "#ffffff");
+            grd.addColorStop(0.3,"#f51af7");
+            grd.addColorStop(1,"#1a1a1a"); 
+            grd.addColorStop(0.1,"#000000");
+            var backgroundFill = draw.rect(canvasWidth, groundY, grd);//creates a varible called backgroundFill and stores a rectange as acts as our background
             background.addChild(backgroundFill);
             
             // TODO: 3 - Add a moon and starfield
             
             //everytime the loop runs it creates a circle with a random x and y respective to the canvas and is added to the background
-              for(var i = 0; i <=100; i++){
-                 var circle = draw.circle(3,'white','LightGray',2);
+              for(var i = 0; i <=300; i++){
+                 var circle = draw.circle(2,'white','LightGray',2);
                  circle.x = canvasWidth*Math.random();
                  circle.y = groundY*Math.random();
                  background.addChild(circle);
@@ -55,17 +61,17 @@ var background = function (window) {
             var moon = draw.bitmap('img/moon.png'); //a variable moon that holds the bitmap drawing of the moon
             moon.x = canvasWidth - 250; //holds the x value of the moon
             moon.y = canvasHeight - 960; //holds the y value of the moon
-            moon.scaleX = 0.6; //changes the x scale of the moon
-            moon.scaleY = 0.6; //changes the y scale of the moon
+            moon.scaleX = 0.3; //changes the x scale of the moon
+            moon.scaleY = 0.3; //changes the y scale of the moon
             background.addChild(moon); //adds the moon to the background
            
             // TODO 5: Part 1 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
             
             for(var i=0; i < 10; i++) {
-                var buildingHeight = 350; //declares a variable  called buildingHeight thats holds the height in pixels
-                var building = draw.rect(75,buildingHeight - 3,'BlueViolet','DarkViolet',3); //declares a viarable called building which will hold the building
+                var buildingHeights = [250, 300, 100, 200, 400, 300, 150, 400, 300, 200]; //declares a variable  called buildingHeight thats holds the height in pixels
+                var building = draw.rect(75,buildingHeights[i] - 2,'BlueViolet','#590f8c',3); //declares a viarable called building which will hold the building
                 building.x = 200*i; //adds 200 pixels to the x value every time loop runs
-                building.y = groundY-buildingHeight; //sets the buildings y position by subtracting the height of the building from the ground
+                building.y = groundY-buildingHeights[i]; //sets the buildings y position by subtracting the height of the building from the ground
                 background.addChild(building); //adds the building to the background so we can see it
                 buildings.push(building); //pushes the buildings data to the buildings array to be stored in an index
             }
@@ -91,12 +97,20 @@ var background = function (window) {
             
             // TODO 4: Part 2 - Move the tree!
             
-            tree.x = tree.x - 1; //takes the current value of tree.x and subtracts 1 pixel 60/second to move the tree to the left
+            tree.x = tree.x - 2; //takes the current value of tree.x and subtracts 2 pixels 60/second to move the tree to the left
             if(tree.x < -200) {
                 tree.x = canvasWidth; //if the tree.x is less than 200, the tree goes back to the cavas width
             }
             
             // TODO 5: Part 2 - Parallax
+            for (var i = 0; i < buildings.length; i++) {
+                buildings[i].x = buildings[i].x - 1;
+                if(buildings[i].x < -100){
+                    buildings[i].x = canvasWidth;
+                }
+            
+                // code to do something with each element
+            }
             
 
         } // end of update function - DO NOT DELETE

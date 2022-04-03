@@ -11,7 +11,7 @@ var init = function (window) {
         app = opspark.makeApp(world.makeRules()),
         canvas = app.canvas, 
         view = app.view,
-        fps = draw.fps('#000');
+        fps = draw.fps('darkgray');
     
     var 
         space, 
@@ -36,9 +36,9 @@ var init = function (window) {
     var background = opspark.makeBackground(app,ground); //Created a variable called background 
     view.addChild(background); //adds the background to the viewboard so we can see it
 
-    var help = draw.textfield('MOVES || up: jump | right: flying jump | down: duck | space: fire | q self destruct!', 
-        '20px Arial',
-        '#ccc', 'left');
+    var help = draw.textfield('MOVES || 🡡: jump | 🡢: flying jump | 🡣: duck | space: fire | q: self destruct!', 
+        '20px Fantasy',
+        '#000', 'left');
     help.x = 10;
     help.y = ground.y + ground.getBounds().height + 10;
     view.addChild(help);

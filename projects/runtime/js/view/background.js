@@ -51,7 +51,7 @@ var background = function (window) {
             
             //everytime the loop runs it creates a circle with a random x and y respective to the canvas and is added to the background
               for(var i = 0; i <=300; i++){
-                 var circle = draw.circle(2,'white','LightGray',2);
+                 var circle = draw.circle(2,'white','#ab89ff',2);
                  circle.x = canvasWidth*Math.random();
                  circle.y = groundY*Math.random();
                  background.addChild(circle);
@@ -77,9 +77,9 @@ var background = function (window) {
             }
             
             // TODO 4: Part 1 - Add a tree
-            tree = draw.bitmap('img/tree.png');
-            tree.x = canvasWidth - 300;
-            tree.y = groundY - 235;
+            tree = draw.bitmap('img/rocket.png');
+            tree.x = canvasWidth + 3000;
+            tree.y = groundY - 450;
             background.addChild(tree);
             tree.scaleX
             tree.scaleY
@@ -97,9 +97,9 @@ var background = function (window) {
             
             // TODO 4: Part 2 - Move the tree!
             
-            tree.x = tree.x - 2; //takes the current value of tree.x and subtracts 2 pixels 60/second to move the tree to the left
+            tree.x = tree.x - 25; //takes the current value of tree.x and subtracts 2 pixels 60/second to move the tree to the left
             if(tree.x < -200) {
-                tree.x = canvasWidth; //if the tree.x is less than 200, the tree goes back to the cavas width
+                tree.x = canvasWidth + 5000; //if the tree.x is less than 200, the tree goes back to the cavas width
             }
             
             // TODO 5: Part 2 - Parallax
